@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bem-vindo</title>
+</head>
+<body class="welcome-screen">
+    <div>
+        <h1 id="horario">00:00</h1>
+    </div>
+
+    <script>
+        function atualizarHorario(){
+            const agora = new Date();
+            const horas = String(agora.getHours()).padStart(2, '0');
+            const minutos = String(agora.getMinutes()).padStart(2, '0');
+            document.getElementById("horario").textContent = `${horas}:${minutos}`;
+        }
+    
+        setInterval(atualizarHorario, 1000);
+        atualizarHorario();
+    </script>
+</body>
+</html>
